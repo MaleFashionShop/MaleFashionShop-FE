@@ -8,11 +8,14 @@ import {
     Nav,
     Navbar,
   } from "react-bootstrap";
+  import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem } from 'mdb-react-ui-kit';
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-import { CartState } from '../context/Context';
+import { CartState } from '../../context/Context';
 import { AiFillDelete } from 'react-icons/ai'; 
+import {BiLogIn, BiLogOut} from 'react-icons/bi';
+
 
 const Header = () => {
    const {
@@ -21,15 +24,16 @@ const Header = () => {
     productDispatch
    } =  CartState();
 
-
   return (
     <Navbar bg="dark" variant='dark' style={{height: 80}}>
         <Container>
             <Navbar.Brand>
-                <Link to="/">Shopping Cart</Link>
+                            <div class="header__logo">
+                                <Link to="/"><img src="/assets/images/logo.png" alt=""/></Link>
+                            </div>
             </Navbar.Brand>
             <Navbar.Text className='search'>
-                <FormControl style={{width: 500}} 
+                <FormControl style={{width: 500, display: 'none'}} 
                             placeholder="Search a product" 
                             className="m-auto"
                             onChange={(e) => {
@@ -40,6 +44,26 @@ const Header = () => {
                             }}
                 />
             </Navbar.Text>
+            <div className="col-lg-6 col-md-6">
+                <nav className="header__menu mobile-menu">
+                <ul>
+                    <li className="active"><Link to="/">Home</Link></li>
+                    <li><Link to="/shop">Shop</Link></li>
+                    <li><a href="#">Pages</a>
+                    <ul className="dropdown">
+                        <li><a href="./about.html">About Us</a></li>
+                        <li><a href="./shop-details.html">Shop Details</a></li>
+                        <li><a href="./shopping-cart.html">Shopping Cart</a></li>
+                        <li><a href="./checkout.html">Check Out</a></li>
+                        <li><a href="./blog-details.html">Blog Details</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contacts</a></li>
+                </ul>
+                </nav>
+            </div>
+
             <Nav>
                 <Dropdown alignRight>
                     <Dropdown.Toggle variant="success">
@@ -85,6 +109,7 @@ const Header = () => {
                         
                     </Dropdown.Menu>
                 </Dropdown>
+
             </Nav>
         </Container>
     </Navbar>

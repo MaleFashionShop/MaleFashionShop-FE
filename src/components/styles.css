@@ -1,12 +1,17 @@
+@import "rsuite/dist/rsuite.css";
+
+#root{ padding: 10px; }
 
 .home {
     display: flex;
   }
-  
+svg {
+  display: inline-block;
+}
 .productContainer {
     display: flex;
-    width: 78%;
-    padding: 20px;
+    width: 100%;
+    padding: 20px 200px 200px 200px;
     flex-wrap: wrap;
     justify-content: space-around;
   }
@@ -30,28 +35,28 @@
     font-size: 30px;
   }
   
-  .productContainer {
+  /* .productContainer {
     display: flex;
     width: 78%;
     padding: 20px;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+  } */
   
   .products {
-    width: 30%;
+    /* width: 30%; */
     margin: 10px;
   }
 
   /* header styles */
 
-.header {
+/* .header {
     display: block;
     text-align: center;
     font-size: 30px;
     margin: 10px 0;
-  }
-  
+}
+   */
   .cartitem {
     display: flex;
     justify-content: space-between;
@@ -95,7 +100,7 @@
   
     .productContainer {
       width: 58%;
-      padding: 0;
+      padding: 50;
     }
   
     .search {
@@ -106,3 +111,9 @@
       width: 100%;
     }
   }
+.text-grey-dark{
+  text-align: center;
+}
+.text-grey-dark a{
+  margin-left: 10px;
+}
